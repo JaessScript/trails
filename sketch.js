@@ -11,4 +11,5 @@ function draw() {
 	background(0);
 	myPixel.show();
 	myPixel.move();
+	myPixel.drawTrail();
 }
