@@ -1,15 +1,20 @@
 // Based on https://www.youtube.com/watch?v=vqE8DMfOajk
 
-let myPixel;
+let starters = [];
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	myPixel = new Tracked(windowWidth / 2, windowHeight / 2);
+	for (let i = 0; i < 15; i++) {
+		starters.push(new Tracked(i * (windowWidth / (i + random(1, 5))), i * (windowHeight / (i + random(1, 5)))));
+	}
 }
 
 function draw() {
 	background(0);
-	myPixel.show();
-	myPixel.move();
-	myPixel.drawTrail();
+
+	for (let i = 0; i < 15; i++) {
+		starters[i].show();
+		starters[i].move();
+		starters[i].drawTrail();
+	}
 }
